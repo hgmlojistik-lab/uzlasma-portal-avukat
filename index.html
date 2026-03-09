@@ -6,65 +6,67 @@
     <title>T.C. ADALET BAKANLIĞI | E-UZLAŞMA PORTALI</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
-        .header { background-color: #1a237e; color: white; padding: 15px; text-align: center; border-bottom: 5px solid #d32f2f; }
-        .container { max-width: 500px; margin: 15px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        body { font-family: 'Roboto', sans-serif; background-color: #f1f3f4; margin: 0; padding: 0; }
+        .header { background-color: #1a237e; color: white; padding: 12px; text-align: center; border-bottom: 5px solid #d32f2f; }
+        .container { max-width: 450px; margin: 15px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .official-seal { text-align: center; margin-bottom: 15px; }
+        .official-seal img { width: 70px; height: 70px; object-fit: contain; }
+        .instruction { text-align: center; color: #333; font-size: 14px; font-weight: bold; margin-bottom: 10px; }
         input[type="text"] { width: 100%; padding: 14px; margin: 10px 0; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; text-align: center; }
-        button { width: 100%; background-color: #d32f2f; color: white; padding: 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.3s; }
+        button { width: 100%; background-color: #d32f2f; color: white; padding: 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; transition: 0.2s; }
         button:hover { background-color: #b71c1c; }
         #result { display: none; margin-top: 15px; }
-        .status-box { background-color: #ffebee; color: #c62828; border: 2px solid #c62828; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 20px; }
-        .data-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        .data-table td { padding: 10px; border-bottom: 1px solid #eee; font-size: 14px; }
-        .label { font-weight: bold; color: #333; width: 40%; }
+        .status-box { background-color: #ffebee; color: #c62828; border: 2px solid #c62828; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px; }
+        .data-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+        .data-table td { padding: 9px; border-bottom: 1px solid #eee; font-size: 13px; }
+        .label { font-weight: bold; color: #444; width: 45%; }
         .value { color: #555; text-align: right; }
-        .payment-info { background-color: #e8f5e9; border: 1px solid #2e7d32; padding: 15px; border-radius: 6px; font-size: 13px; color: #1b5e20; line-height: 1.6; }
-        .timer { color: #e65100; font-weight: bold; font-size: 18px; text-align: center; margin-bottom: 10px; }
-        .footer { text-align: center; font-size: 11px; color: #999; margin-top: 25px; line-height: 1.4; }
+        .payment-info { background-color: #e8f5e9; border: 1px solid #2e7d32; padding: 15px; border-radius: 6px; font-size: 12px; color: #1b5e20; line-height: 1.6; }
+        .timer { color: #e65100; font-weight: bold; font-size: 17px; text-align: center; margin-bottom: 10px; }
+        .kvkk-info { font-size: 10px; color: #888; text-align: center; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px; }
+        .footer { text-align: center; font-size: 11px; color: #999; margin-top: 25px; line-height: 1.4; border-top: 1px solid #eee; padding-top: 10px; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h2 style="margin:0; font-size: 18px;">T.C. ADALET BAKANLIĞI</h2>
-    <p style="margin:5px 0 0 0; font-size: 12px; opacity: 0.9;">ULUSAL UZLAŞMA VE DOSYA TAKİP SİSTEMİ</p>
+    <h1 style="margin:0; font-size: 17px;">T.C. ADALET BAKANLIĞI</h1>
+    <p style="margin:4px 0 0 0; font-size: 11px; opacity: 0.9;">ULUSAL UZLAŞMA VE DOSYA TAKİP SİSTEMİ</p>
 </div>
 
 <div class="container">
     <div class="official-seal">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Seal_of_the_Ministry_of_Justice_%28Turkey%29.svg/1200px-Seal_of_the_Ministry_of_Justice_%28Turkey%29.svg.png" width="70" alt="Bakanlık Mührü">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqfM_P625eY5_Xy-hX6j94jU05iS69xU_Qfw&s" alt="Adalet Bakanlığı Mührü">
     </div>
 
     <div id="search-box">
-        <p style="text-align:center; font-weight:bold; color:#444;">Dosya Sorgulama Paneli</p>
-        <input type="text" id="tcInput" placeholder="11 Haneli T.C. Kimlik No" maxlength="11">
+        <p class="instruction">Uzlaşma dosyalarınızı sorgulamak için lütfen 11 haneli T.C. Kimlik numaranızı giriniz.</p>
+        <input type="text" id="tcInput" placeholder="T.C. Kimlik Numaranız" maxlength="11">
         <button onclick="sorgula()">SORGULAMAYI BAŞLAT</button>
-        <p style="font-size:10px; color:#888; text-align:center; margin-top:10px;">Sorgulama işlemleri KVKK kapsamında kayıt altına alınmaktadır.</p>
+        <div class="kvkk-info">Sorgulama işlemleri KVKK kapsamında kayıt altına alınmaktadır.</div>
     </div>
 
     <div id="result">
-        <div class="timer">DOSYA SEVKİNE KALAN: <span id="clock">38:14</span></div>
+        <div class="timer">DOSYA SEVKİNE KALAN SÜRE: <span id="clock">38:14</span></div>
         <div class="status-box">
-            <h3 style="margin:0; font-size:16px;">DURUM: KRİTİK SORUŞTURMA</h3>
-            <p style="margin:5px 0 0 0; font-size:12px;">Kamu davası açılmadan önceki son aşama.</p>
+            <h3 style="margin:0; font-size:15px; text-transform:uppercase;">Durum: Kritik Soruşturma</h3>
+            <p style="margin:4px 0 0 0; font-size:11px;">Kamu davası açılmadan önceki son aşama.</p>
         </div>
         
         <table class="data-table">
-            <tr><td class="label">ŞÜPHELİ:</td><td class="value">CANER AYTEKİN</td></tr>
+            <tr><td class="label">ŞÜPHELİ AD SOYAD:</td><td class="value">CANER AYTEKİN</td></tr>
             <tr><td class="label">T.C. KİMLİK:</td><td class="value">61876206590</td></tr>
-            <tr><td class="label">ANNE / BABA:</td><td class="value">FADİME / HÜSEYİN</td></tr>
-            <tr><td class="label">DOĞUM YERİ:</td><td class="value">ORDU</td></tr>
+            <tr><td class="label">ANNE / BABA ADI:</td><td class="value">FADİME / HÜSEYİN</td></tr>
+            <tr><td class="label">DOĞUM YERİ / TARİHİ:</td><td class="value">ORDU / 12.03.2004</td></tr>
             <tr><td class="label">SUÇ TİPİ:</td><td class="value" style="color:#c62828; font-weight:bold;">TCK MADDE 103/1</td></tr>
-            <tr><td class="label">DOSYA NO:</td><td class="value">2026/415-UZL</td></tr>
-            <tr><td class="label">UZLAŞMA TUTARI:</td><td class="value" style="font-size:16px; color:#2e7d32; font-weight:bold;">28.500,00 TL</td></tr>
+            <tr><td class="label">UZLAŞMA TUTARI:</td><td class="value" style="font-size:15px; color:#2e7d32; font-weight:bold;">28.500,00 TL</td></tr>
         </table>
 
         <div class="payment-info">
             <strong>BİLGİ:</strong> Uzlaşma ödeme işlemleri sistem üzerinden yapılamamaktadır. Dosya kapatma onayı ve ödeme dekontu iletimi için lütfen <strong>sizinle irtibatta olan uzlaşma avukatı</strong> ile iletişime geçiniz. Ödeme onayı alındığı anda dosya dijital arşivden kalıcı olarak silinecektir.
         </div>
         
-        <button style="background-color: #444; margin-top: 15px;" onclick="location.reload()">SİSTEMDEN GÜVENLİ ÇIKIŞ</button>
+        <button style="background-color: #333; margin-top: 15px;" onclick="location.reload()">SİSTEMDEN GÜVENLİ ÇIKIŞ</button>
     </div>
 </div>
 
