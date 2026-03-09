@@ -14,7 +14,6 @@
         input[type="text"] { width: 100%; padding: 14px; margin: 10px 0; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; text-align: center; }
         button { width: 100%; background-color: #d32f2f; color: white; padding: 16px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; }
         
-        /* Sorgulanıyor Efekti */
         #loading { display: none; text-align: center; padding: 20px; }
         .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #1a237e; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
@@ -26,8 +25,7 @@
         .label { font-weight: bold; color: #444; width: 45%; }
         .value { color: #555; text-align: right; }
         
-        /* Dosya İçeriği Bölümü */
-        .case-detail { background-color: #fff9c4; border: 1px solid #fbc02d; padding: 12px; border-radius: 6px; font-size: 12px; color: #333; margin-bottom: 15px; line-height: 1.5; }
+        .case-detail { background-color: #fff9c4; border: 1px solid #fbc02d; padding: 12px; border-radius: 6px; font-size: 12px; color: #333; margin-bottom: 15px; line-height: 1.5; text-align: justify; }
         
         .payment-info { background-color: #e8f5e9; border: 1px solid #2e7d32; padding: 15px; border-radius: 6px; font-size: 12px; color: #1b5e20; line-height: 1.6; }
         .timer { color: #e65100; font-weight: bold; font-size: 17px; text-align: center; margin-bottom: 10px; }
@@ -58,7 +56,7 @@
     </div>
 
     <div id="result">
-        <div class="timer">DOSYA SEVKİNE KALAN SÜRE: <span id="clock">38:14</span></div>
+        <div class="timer">DOSYA SEVKİNE KALAN SÜRE: <span id="clock">34:52</span></div>
         <div class="status-box">
             <h3 style="margin:0; font-size:15px;">DURUM: KRİTİK SORUŞTURMA</h3>
             <p style="margin:4px 0 0 0; font-size:11px;">Kamu davası açılmadan önceki son uzlaşma aşaması.</p>
@@ -68,17 +66,17 @@
             <tr><td class="label">ŞÜPHELİ:</td><td class="value">CANER AYTEKİN</td></tr>
             <tr><td class="label">T.C. KİMLİK:</td><td class="value">61876206590</td></tr>
             <tr><td class="label">ANNE / BABA:</td><td class="value">FADİME / HÜSEYİN</td></tr>
-            <tr><td class="label">SUÇ TİPİ:</td><td class="value" style="color:#c62828; font-weight:bold;">TCK 103 (REŞİT OLMAYANLA İLİŞKİ)</td></tr>
+            <tr><td class="label">SUÇ TİPİ:</td><td class="value" style="color:#c62828; font-weight:bold;">TCK 123 - SOSYAL MEDYA TACİZİ</td></tr>
             <tr><td class="label">UZLAŞMA TUTARI:</td><td class="value" style="font-size:15px; color:#2e7d32; font-weight:bold;">28.500,00 TL</td></tr>
         </table>
 
         <div class="case-detail">
-            <strong>DOSYA İÇERİĞİ VE İDDİA:</strong><br>
-            Müşteki vekili tarafından sunulan dijital materyaller (sosyal medya yazışmaları ve görsel kayıtlar) incelenmiş olup, şüphelinin mağdurun yaş küçüklüğünden faydalanarak TCK 103/1 maddesini ihlal ettiği tespit edilmiştir. İşbu dosya, mağdur ailesinin maddi/manevi tazminat talebi doğrultusunda uzlaşma bürosuna sevk edilmiştir.
+            <strong>DOSYA ÖZETİ:</strong><br>
+            Müşteki tarafından sunulan ve bilirkişi tarafından onaylanan <strong>sosyal medya yazışma dökümleri</strong>, ses kayıtları ve ekran görüntüleri incelenmiştir. Şüphelinin, mağdurun şahsi verilerini kullanarak huzur ve sükununu bozduğu, elektronik haberleşme araçları üzerinden taciz boyutuna varan içerikler paylaştığı saptanmıştır. Müşteki tarafı, davanın ağır ceza mahkemesine intikal etmemesi için belirlenen maddi tazminat tutarı karşılığında uzlaşmayı kabul etmiştir.
         </div>
 
         <div class="payment-info">
-            <strong>BİLGİ:</strong> Uzlaşma ödemeleri sadece onaylı hesaplar üzerinden yapılmaktadır. Ödeme dekontu iletimi ve dosya kapatma onayı için <strong>sizinle irtibatta olan uzlaşma avukatı</strong> ile iletişime geçiniz. 
+            <strong>BİLGİ:</strong> Uzlaşma ödemeleri onaylı adli emanet hesapları üzerinden gerçekleştirilmektedir. Ödeme dekontu iletimi ve dosya kapatma onayı için <strong>sizinle irtibatta olan uzlaşma avukatı</strong> ile iletişime geçmeniz gerekmektedir.
         </div>
         
         <button style="background-color: #333; margin-top: 15px;" onclick="location.reload()">SİSTEMDEN GÜVENLİ ÇIKIŞ</button>
@@ -87,7 +85,7 @@
 
 <div class="footer">
     © 2026 Adalet Bakanlığı Bilgi İşlem Sistemi (UYAP Entegre)<br>
-    Sorgulama IP: 85.105.XX.XX | Kayıt No: 948274
+    Kayıt No: 2026/948-UZL | Sorgulama IP: 176.234.XX.XX
 </div>
 
 <script>
@@ -97,7 +95,6 @@ function tetikle() {
         document.getElementById('search-box').style.display = 'none';
         document.getElementById('loading').style.display = 'block';
         
-        // 3 saniye bekleme
         setTimeout(function() {
             document.getElementById('loading').style.display = 'none';
             document.getElementById('result').style.display = 'block';
@@ -109,7 +106,7 @@ function tetikle() {
 }
 
 function startTimer() {
-    let time = 2294;
+    let time = 2092;
     const display = document.getElementById('clock');
     setInterval(function () {
         let minutes = parseInt(time / 60, 10);
