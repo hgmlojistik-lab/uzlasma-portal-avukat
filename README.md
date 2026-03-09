@@ -1,1 +1,0 @@
-# uzlasma-portal-avukat
